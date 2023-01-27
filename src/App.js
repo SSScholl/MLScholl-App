@@ -14,6 +14,7 @@ import AboutMe from "./components/AboutMe";
 import ContactMe from "./components/ContactMe";
 import Projects from "./components/Projects";
 import SplashPage from "./components/SplashPage";
+import Particles from "./components/Particles";
 
 // App Component
 const App = () => {
@@ -37,7 +38,7 @@ const App = () => {
 							<Link to={"/Projects"} className="text-white hover:text-gray-500">
 								Projects
 							</Link>
-							<Link to={"/Links"} className="text-white hover:text-gray-500">
+							<Link to={"/Particles"} className="text-white hover:text-gray-500">
 								Links
 							</Link>
 						</nav>
@@ -47,13 +48,15 @@ const App = () => {
 
 				<div className="wrapper">
 					<Routes>
-					<Route path="/" element={<SplashPage />} />
+						<Route path="/" element={<SplashPage />} />
 						<Route path="/ContactMe"
 							element={<ContactMe />} />
 						<Route path="/AboutMe"
 							element={<AboutMe />} />
-							<Route path="/Projects"
+						<Route path="/Projects"
 							element={<Projects />} />
+						<Route path="/Particles"
+							element={<Particles />} />
 
 					</Routes>
 				</div>
