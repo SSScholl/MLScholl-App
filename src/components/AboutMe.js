@@ -1,16 +1,17 @@
-import React from 'react';
+import React from "react";
 
-function AboutMe() {
+const AboutMe = () => {
   return (
-    <div className="container mx-auto py-4">
-      <h1 className="text-3xl font-medium">About Me</h1>
-      <img src="path/to/image" alt="My headshot" className="w-32 h-32 rounded-full mx-auto my-4" />
-      <p className="text-lg">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna sit amet congue pretium, 
-        augue augue congue ipsum, non placerat elit purus et nulla. Sed id nulla quis mauris blandit tristique.
+    <div className="about-me">
+      <h1 className="text-2xl font-medium mb-2">About Me</h1>
+      <p className="text-base leading-relaxed mb-4">
+        My name is Michael Scholl and I am a computer engineer with a passion for building and creating innovative technology. I have a strong background in software development, machine learning, and computer networks. I am always looking for new challenges and opportunities to learn and grow as a professional.
+      </p>
+      <p className="text-base leading-relaxed mb-4">
+        I have experience in a variety of programming languages including C++, Python, and JavaScript. I am also familiar with various web development frameworks such as React, Angular, and Vue.js. I have worked on various projects in my field such as building machine learning models, creating mobile and web applications, and designing and implementing computer networks.
       </p>
     </div>
   );
-}
+};
 
 export default AboutMe;

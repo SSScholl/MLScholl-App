@@ -1,73 +1,65 @@
 // Import React
 import React from "react";
 
-// Import Bootstrap
-import { Nav, Navbar, Container, Row, Col }
-		from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.css";
-
 // Import Custom CSS
 import "./App.css";
 
 // Import from react-router-dom
-import { BrowserRouter as Router, Routes,
-	Route, Link } from "react-router-dom";
+import {
+	BrowserRouter as Router, Routes,
+	Route, Link
+} from "react-router-dom";
 
 import AboutMe from "./components/AboutMe";
 import ContactMe from "./components/ContactMe";
+import Projects from "./components/Projects";
+import SplashPage from "./components/SplashPage";
 
 // App Component
 const App = () => {
-return (
-	<Router>
-	<div className="App">
-		<header className="App-header">
-		<Navbar bg="dark" variant="dark">
-			<Container>
-			<Navbar.Brand>
-				<Link to={"/AboutMe"}
-				className="nav-link">
-				Michael Scholl
-				</Link>
-			</Navbar.Brand>
+	return (
+		<Router>
+			<div className="App">
+				<header className="bg-gray-900">
+					<div className="container mx-auto flex items-center justify-between px-4 py-3">
+						<div className="text-white font-medium">
+							<Link to={"/"} className="nav-link">
+								Michael Scholl
+							</Link>
+						</div>
+						<nav className="flex space-x-4">
+							<Link to={"/AboutMe"} className="text-white hover:text-gray-500">
+								About
+							</Link>
+							<Link to={"/ContactMe"} className="text-white hover:text-gray-500">
+								Contact
+							</Link>
+							<Link to={"/Projects"} className="text-white hover:text-gray-500">
+								Projects
+							</Link>
+							<Link to={"/Links"} className="text-white hover:text-gray-500">
+								Links
+							</Link>
+						</nav>
+					</div>
+				</header>
 
-			<Nav className="justify-content-end">
-				<Nav>
-				<Link to={"/AboutMe"}
-					className="nav-link">
-					About
-				</Link>
-				</Nav>
 
-				<Nav>
-				<Link to={"/ContactMe"}
-					className="nav-link">
-					Contact
-				</Link>
-				</Nav>
+				<div className="wrapper">
+					<Routes>
+					<Route path="/" element={<SplashPage />} />
+						<Route path="/ContactMe"
+							element={<ContactMe />} />
+						<Route path="/AboutMe"
+							element={<AboutMe />} />
+							<Route path="/Projects"
+							element={<Projects />} />
 
-			</Nav>
-			</Container>
-		</Navbar>
-		</header>
-
-		<Container>
-		<Row>
-			<Col md={12}>
-			<div className="wrapper">
-				<Routes>
-				<Route path="/ContactMe"
-					element={<ContactMe />} />
-				<Route path="/AboutMe"
-					element={<AboutMe />} />
-				</Routes>
+					</Routes>
+				</div>
 			</div>
-			</Col>
-		</Row>
-		</Container>
-	</div>
-	</Router>
-);
+		</Router>
+	);
 };
 
 export default App;
