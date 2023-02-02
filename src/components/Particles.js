@@ -2,15 +2,10 @@ import React, { useCallback, useState } from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import { polygonPathName, loadPolygonPath } from "tsparticles-path-polygon";
-//import hexagonOptions from './particle-options/hexagon.json';
+import hexagonOptions from './particle-options/hexagon.json';
 import testOptions from './particle-options/test.json';
-import { hexagonOptions } from './particles-options';
+//import { hexagonOptions } from './particles-options';
 
-
-import(`./particles-options/${selectedFile}`)
-.then(options => {
-  <Particles id="tsparticles" options={options} init={particlesInit} loaded={particlesLoaded} />
-});
 
 
 // Import Custom CSS
@@ -20,8 +15,8 @@ const ParticlesPage = () => {
 
   const [showOverlay, setShowOverlay] = useState(false);
   const [selectedFile, setSelectedFile] = useState('');
-  const [optionFileLocation] = '';
-  const options = require(`./particles-options/${selectedFile}`);
+
+  //const options = require(`./particles-options/${selectedFile}`);
 
 
   const fileList = [
@@ -87,7 +82,7 @@ const ParticlesPage = () => {
           </div>
         </div>
       )}
-      <Particles id="tsparticles" options={require(`./particles-options/${selectedFile}`)} init={particlesInit} loaded={particlesLoaded} />
+      <Particles id="tsparticles" options={hexagonOptions} init={particlesInit} loaded={particlesLoaded} />
     </div>
   );
 };

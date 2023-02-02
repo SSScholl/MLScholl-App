@@ -2,7 +2,7 @@ import React from 'react';
 
 function ContactMe() {
     return (
-        <div className="container mx-auto py-4">
+        <div className="container mx-auto py-4 flex items-center justify-center">
             <h1 className="text-3xl font-medium">Contact Me</h1>
             <form className="w-full max-w-lg">
                 <div className="flex flex-wrap -mx-3 mb-6">

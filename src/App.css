@@ -10,3 +10,8 @@
 .hover\:bg-blue-700:hover {
   background-color: #2779bd;
 }
+
+body {
+  margin: 0;
+  padding: 0;
+}

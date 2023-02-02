@@ -1,23 +1,49 @@
-import React from "react";
+import React, { useCallback, useState } from "react";
+import Particles from "react-tsparticles";
+import { loadFull } from "tsparticles";
+import { Link, animateScroll as scroll } from "react-scroll";
+import hexagonOptions from './particle-options/hexagon.json';
+
+import Card from './Card';
+
+
 
 const SplashPage = () => {
-    return (
-        <div className="bg-gray-200 min-h-screen">
-            <section id="about" className="container mx-auto py-8">
-                <h2 className="text-3xl font-medium text-center">About</h2>
-                <p className="text-gray-700 text-center">
-                    I am a computer engineer with experience in web development and
-                    machine learning.
-                </p>
-                <div className="flex justify-center py-8">
-                    <img
-                        src="https://via.placeholder.com/150"
-                        alt="My Profile Picture"
-                        className="rounded-full"
-                    />
-                </div>
-            </section>
 
+    const particlesInit = useCallback(async engine => {
+        console.log(engine);
+        // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
+        // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+        // starting from v2 you can add only the features you need reducing the bundle size
+        await loadFull(engine);
+        //https://codesandbox.io/s/42ps4y?file=/src/App.js:324-2223
+        //https://codepen.io/matteobruni/pen/ZExaQyB
+        ///https://particles.js.org/
+        //await loadPolygonPath(engine);
+      }, []);
+    
+      const particlesLoaded = useCallback(async container => {
+        await console.log(container);
+      }, []);
+
+    return (
+
+        
+        <div className="bg-cover bg-center h-screen">
+            <Particles id="tsparticles" options={hexagonOptions} init={particlesInit} loaded={particlesLoaded} />
+            <div className="flex items-center justify-center h-full">
+                <Link
+                    to="about"
+                    spy={true}
+                    smooth={true}
+                    offset={50}
+                    duration={500}
+                    className="text-white text-5xl hover:text-gray-400"
+                    onClick={() => scroll.scrollTo(650)}
+                >
+                    <i className="fas fa-arrow-down"></i>
+                </Link>
+            </div>
             <section id="projects" className="container mx-auto py-8">
                 <h2 className="text-3xl font-medium text-center">Projects</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -47,6 +73,7 @@ const SplashPage = () => {
                         <a href="#" className="btn bg-indigo-800 text-white">
                             View on GitHub
                         </a>
+                        <Card />
                     </div>
                 </div>
             </section>

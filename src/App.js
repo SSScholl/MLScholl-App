@@ -1,5 +1,5 @@
 // Import React
-import React from "react";
+import React, { useCallback, useState } from "react";
 
 // Import Custom CSS
 import "./App.css";
@@ -18,6 +18,10 @@ import Particles from "./components/Particles";
 
 // App Component
 const App = () => {
+
+	const [darkMode, setDarkMode] = useState(false);
+
+
 	return (
 		<Router>
 			<div className="App">
@@ -57,7 +61,6 @@ const App = () => {
 							element={<Projects />} />
 						<Route path="/Particles"
 							element={<Particles />} />
-
 					</Routes>
 				</div>
 			</div>
