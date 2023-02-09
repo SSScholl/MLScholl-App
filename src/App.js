@@ -15,6 +15,7 @@ import ContactMe from "./components/ContactMe";
 import Projects from "./components/Projects";
 import SplashPage from "./components/SplashPage";
 import Particles from "./components/Particles";
+import TicTacToe from "./components/tictactoe";
 
 // App Component
 const App = () => {
@@ -61,6 +62,8 @@ const App = () => {
 							element={<Projects />} />
 						<Route path="/Particles"
 							element={<Particles />} />
+						<Route path="/TicTacToe"
+							element={<TicTacToe />} />
 					</Routes>
 				</div>
 			</div>
