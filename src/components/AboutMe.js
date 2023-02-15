@@ -1,63 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
-/* const AboutMe = () => {
+function AboutMe() {
   return (
-    <div className="about-me">
-      <h1 className="text-2xl font-medium mb-2">About Me</h1>
-      <p className="text-base leading-relaxed mb-4">
-        My name is Michael Scholl and I am a computer engineer with a passion for building and creating innovative technology. I have a strong background in software development, machine learning, and computer networks. I am always looking for new challenges and opportunities to learn and grow as a professional.
-      </p>
-      <p className="text-base leading-relaxed mb-4">
-        I have experience in a variety of programming languages including C++, Python, and JavaScript. I am also familiar with various web development frameworks such as React, Angular, and Vue.js. I have worked on various projects in my field such as building machine learning models, creating mobile and web applications, and designing and implementing computer networks.
-      </p>
+    <div className="dark">
+      <div className="container mx-auto py-4 flex flex-col items-center justify-center">
+        <h1 className="text-3xl font-medium mb-4">About Me</h1>
+        <div className="w-full max-w-lg flex flex-col items-center">
+          <img className="rounded-full w-40 h-40 mb-4" src="https://via.placeholder.com/150" alt="Michael Scholl" />
+          <h2 className="text-xl font-medium mb-2">Michael Scholl</h2>
+          <p className="text-gray-500 text-sm font-medium mb-4">Computer Engineer</p>
+          <p className="text-gray-400 text-center mb-8">I am a computer engineer with a passion for coding and technology. I love solving problems and creating innovative solutions that make people's lives easier. In my free time, I enjoy working on personal coding projects, learning new programming languages, and playing video games.</p>
+        </div>
+      </div>
     </div>
   );
-}; */
-
-//export default AboutMe;
-
-const AboutMe = () => {
-  const [x, setX] = useState(0);
-  const [y, setY] = useState(0);
-  const [deltaX, setDeltaX] = useState(2);
-  const [deltaY, setDeltaY] = useState(2);
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      let nextX = x + deltaX;
-      let nextY = y + deltaY;
-
-      if (nextX + 50 >= window.innerWidth || nextX <= 0) {
-        setDeltaX(deltaX * -1);
-        nextX = x + deltaX;
-      }
-      if (nextY + 50 >= window.innerHeight || nextY <= 0) {
-        setDeltaY(deltaY * -1);
-        nextY = y + deltaY;
-      }
-
-      setX(nextX);
-      setY(nextY);
-    }, 50);
-
-    return () => clearInterval(intervalId);
-  }, [x, y, deltaX, deltaY]);
-
-  return (
-    <div
-    
-      style={{
-        position: 'fixed',
-        left: x,
-        top: y,
-        width: 500,
-        height: 500,
-        backgroundImage: `url(https://en.wikipedia.org/wiki/File:Nicolas_Cage_Deauville_2013.jpg)`,
-        backgroundSize: 'cover'
-      }}
-    />
-    
-  );
-};
+}
 
 export default AboutMe;
